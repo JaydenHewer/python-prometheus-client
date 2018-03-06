@@ -1,0 +1,44 @@
+python-prometheus-client (0.1.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump Standards-Version and compat.
+
+ -- Martín Ferrari <tincho@debian.org>  Thu, 08 Feb 2018 19:22:17 +0000
+
+python-prometheus-client (0.0.20-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Martín Ferrari <tincho@debian.org>  Sun, 30 Jul 2017 13:36:36 +0000
+
+python-prometheus-client (0.0.19-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/watch: Fix a bug in filenamemangle, and make it more
+    resilient.
+  * debian/control: Update Standards-Version with no changes.
+
+ -- Martín Ferrari <tincho@debian.org>  Fri, 23 Jun 2017 17:43:08 +0000
+
+python-prometheus-client (0.0.18-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Federico Ceratto <federico@debian.org>  Tue, 03 Jan 2017 22:02:23 +0000
+
+python-prometheus-client (0.0.14-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/control:
+    - Use https for Vcs-Git.
+    - Update Standards-Version with no changes.
+    - Add myself to Uploaders.
+
+ -- Martín Ferrari <tincho@debian.org>  Mon, 25 Jul 2016 14:41:56 +0000
+
+python-prometheus-client (0.0.13-1) unstable; urgency=low
+
+  [ Christopher Baines ]
+  * Initial release (Closes: #808818)
+
+ -- Federico Ceratto <federico@debian.org>  Fri, 01 Jan 2016 21:17:32 +0000
