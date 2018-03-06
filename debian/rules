@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+
+export DH_VERBOSE=1
+export PYBUILD_NAME=prometheus-client
+
+# Set these, such that pybuild does not set them
+export http_proxy=
+export https_proxy=
+
+%:
+	dh $@ --with python2,python3 --buildsystem=pybuild
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm ./prometheus_client/decorator.py -f
+
