@@ -13,12 +13,10 @@ run-build:
     - cd /builds/joydenfew/python-prometheus-client
     - echo "Installing packages required for package building"
     #- #apt-get install -y equivs devscripts dpkg-dev quilt curl nano apt-transport-https apt-utils ssl-cert ca-certificates gnupg lsb-release debhelper dh-systemd git
-    - TAG="git describe --tags"
     #- #echo "deb https://packagecloud.io/faucetsdn/faucet/$(lsb_release -si | awk '{print tolower($0)}')/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/faucet.list && curl -L https://packagecloud.io/faucetsdn/faucet/gpgkey | apt-key add - && apt-get update
     - echo "installing build deps"
     - apt-get upgrade -y && mk-build-deps -i -r -t 'apt-get -f -y --force-yes'
     - export DEBEMAIL='jfh13@students.waikato.ac.nz' && export DEBFULLNAME='Jayden Hewer'
-    - debchange --newversion $($TAG) -b "Package automatically generated for new version of faucet"
     - fakeroot debian/rules binary
     - mkdir build
     - mv ../*.deb build/
@@ -26,8 +24,6 @@ run-build:
   artifacts:
     paths:
       - build/*
-  only:
-      - tags
 
 deploy-package:
   stage: deploy
@@ -44,6 +40,3 @@ deploy-package:
     - package_cloud push Student/faucet/ubuntu/zesty *.deb
     - package_cloud push Student/faucet/ubuntu/artful *.deb
     - package_cloud push Student/faucet/ubuntu/bionic *.deb
-  only:
-      - tags
-
