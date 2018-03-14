@@ -1,0 +1,17 @@
+From: Federico Ceratto <federico@debian.org>
+Date: Tue, 3 Jan 2017 21:30:13 +0000
+Subject: Import unvendorized decorator.py
+Forwarded: no
+
+---
+--- b/prometheus_client/core.py
++++ b/prometheus_client/core.py
+@@ -21,7 +21,7 @@
+ from threading import Lock
+ from timeit import default_timer
+ 
+-from .decorator import decorate
++from decorator import decorate
+ 
+ _METRIC_NAME_RE = re.compile(r'^[a-zA-Z_:][a-zA-Z0-9_:]*$')
+ _METRIC_LABEL_NAME_RE = re.compile(r'^[a-zA-Z_][a-zA-Z0-9_]*$')

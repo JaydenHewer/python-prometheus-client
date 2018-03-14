@@ -1,0 +1,61 @@
+Source: python-prometheus-client
+Maintainer: Christopher Baines <mail@cbaines.net>
+Uploaders: Federico Ceratto <federico@debian.org>,
+           Martín Ferrari <tincho@debian.org>
+Section: python
+Priority: optional
+Build-Depends: debhelper (>= 11~)
+Build-Depends-Indep:
+               dh-python,
+               python-all,
+               python-decorator (>= 4.0.10),
+               python3-decorator (>= 4.0.10),
+               python-setuptools,
+               python3-all,
+               python3-setuptools,
+Standards-Version: 4.1.3
+Homepage: https://github.com/prometheus/client_python
+Vcs-Git: https://anonscm.debian.org/git/collab-maint/python-prometheus-client.git
+Vcs-browser: https://anonscm.debian.org/cgit/collab-maint/python-prometheus-client.git
+
+Package: python-prometheus-client
+Architecture: all
+Depends: ${misc:Depends},
+ ${python:Depends},
+ python-decorator (>= 4.0.10-1)
+Description: Python 2 client for the Prometheus monitoring system
+ This library provides an API for exporting metrics from a Python application.
+ It provides classes for the metric types, and an HTTP server to expose the
+ metrics to Prometheus.
+ .
+ When using Linux, the process CPU, RAM, file descriptor usage and start time
+ will also be exported.
+ .
+ Along with the HTTP server to expose metrics, you can also write the metrics
+ to a text file to be exported by the prometheus-node-exporter, or push them to
+ the prometheus-pushgateway.
+ .
+ This library also includes support for re-exporting Graphite metrics to
+ Prometheus, custom collectors to proxy metrics for other systems and a parser
+ for the Prometheus text format.
+
+Package: python3-prometheus-client
+Architecture: all
+Depends: ${misc:Depends},
+ ${python3:Depends},
+ python3-decorator (>= 4.0.10-1)
+Description: Python 3 client for the Prometheus monitoring system
+ This library provides an API for exporting metrics from a Python 3 application
+ It provides classes for the metric types, and an HTTP server to expose the
+ metrics to Prometheus.
+ .
+ When using Linux, the process CPU, RAM, file descriptor usage and start time
+ will also be exported.
+ .
+ Along with the HTTP server to expose metrics, you can also write the metrics
+ to a text file to be exported by the prometheus-node-exporter, or push them to
+ the prometheus-pushgateway.
+ .
+ This library also includes support for re-exporting Graphite metrics to
+ Prometheus, custom collectors to proxy metrics for other systems and a parser
+ for the Prometheus text format.
